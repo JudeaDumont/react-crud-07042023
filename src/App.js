@@ -1,23 +1,51 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Axios from 'axios';
 
 function App() {
+  const baseURL = "https://localhost:7091"
+
+  const [name, setName] = useState("");
+  const [id, setID] = useState("");
+
+  const getContacts = () => {
+    console.log(name);
+    Axios.get(baseURL + '/api/Contacts');
+  }
+
+  const addContact = () => {
+    console.log(name);
+    Axios.post(baseURL + '/api/Contacts', {
+      name: name
+    });
+  }
+
+  const deleteById = () => {
+    console.log(id);
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <label>Name:</label>
+      <input type="text" 
+      onChange={(event)=>{
+        setName(event.target.value);
+      }}
+      id="name-input"/>
+      <button 
+      onClick={addContact}
+      id="add-candidate-button">Add</button>
+
+      <p></p>
+      <label>ID:</label>
+      <input type="text" 
+      onChange={(event)=>{
+        setID(event.target.value);
+      }}
+      id="id-input"/>
+      <button 
+      onClick={deleteById}
+      id="delete-candidate-button">Delete</button>
     </div>
   );
 }
