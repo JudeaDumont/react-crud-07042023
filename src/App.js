@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import './App.css';
 import ContactDataGrid from './ContactDataGrid.tsx';
 import BASE_URL from './global-variables.tsx';
+import Popup from "reactjs-popup";
 
 function App() {
 
@@ -42,7 +43,10 @@ function App() {
     return (
         <div className="App">
             { error &&
-                <h3 className="error"> { error } </h3> }
+                <Popup defaultOpen={true} closeOnDocumentClick={false}>
+                    <div>{error}</div>
+                </Popup>
+            }
             <ContactDataGrid contacts={contacts}/>
 
             <label>Name:</label>
