@@ -17,7 +17,7 @@ function App() {
             .catch(error => {
                 
                 let message = "Could not retrieve contacts: " + error.message + ", is the API running?";
-                console.log(message);
+                console.error(message);
                 setError(message);
             });
     }
