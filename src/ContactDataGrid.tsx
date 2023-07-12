@@ -1,6 +1,4 @@
-import React from "react";
-import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
-import BASE_URL from "./global-variables";
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 const columns: GridColDef[] = [
   { field: 'name', headerName: 'Name', width: 150 },
