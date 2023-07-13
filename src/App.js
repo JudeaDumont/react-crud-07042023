@@ -15,7 +15,7 @@ function App() {
         Axios.get(BASE_URL + '/api/Contacts')
             .then(resp => setContacts([...resp.data]))
             .catch(error => {
-                
+
                 let message = "Could not retrieve contacts: " + error.message + ", is the API running?";
                 console.error(message);
                 setError(message);
@@ -42,7 +42,7 @@ function App() {
 
     return (
         <div className="App">
-            { error &&
+            {error &&
                 <Popup defaultOpen={true} closeOnDocumentClick={false}>
                     <div>{error}</div>
                 </Popup>
@@ -69,7 +69,8 @@ function App() {
                    id="id-input"/>
             <button
                 onClick={deleteById}
-                id="delete-candidate-button">Delete
+                id="delete-candidate-button">
+                Delete
             </button>
         </div>
     );
