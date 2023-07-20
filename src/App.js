@@ -26,7 +26,10 @@ function App() {
         Axios.post(BASE_URL + '/api/Contacts', {
             name: name
         });
-        getContacts(); //todo: the reason why the table does not immediately update is because database does not instantly write it!
+        //todo: the reason why the table does not immediately update is because database does not instantly write it!
+        //todo: a automation testing framework would have to wait for data to populate the rows
+        //todo: what would be even better is to show a loading spinner on the table/for the cursor
+        getContacts();
     }
 
     const deleteById = () => {
