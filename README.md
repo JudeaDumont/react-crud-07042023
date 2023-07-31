@@ -1,3 +1,6 @@
+
+# Expects to be checked out into C:\dev\CsharpReactStack
+
 # Used in conjunction as a FRONTEND with https://github.com/JudeaDumont/CsharpWebAPI
 - debug CSharpWebAPI
 
